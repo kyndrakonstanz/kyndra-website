@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KYNDRA</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Poppins:wght@300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose-dark: #b5657a;
+    --rose-light: #f4e3e7;
+    --text-dark: #2e2a2b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    background: linear-gradient(180deg, var(--rose-light) 0%, #ffffff 60%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    color: var(--text-dark);
+  }
+  .card {
+    max-width: 420px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 40px 30px;
+    text-align: center;
+  }
+  .kyndra-logo {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--rose-dark);
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+  }
+  .partner-logo {
+    max-width: 160px;
+    max-height: 160px;
+    margin: 0 auto 24px auto;
+    display: block;
+    border-radius: 12px;
+  }
+  .partner-name {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  .partner-message {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  .tagline {
+    font-size: 13px;
+    color: var(--rose-dark);
+    letter-spacing: 0.5px;
+  }
+  .loading {
+    font-size: 14px;
+    color: #999;
+  }
+</style>
+</head>
+<body>
+
+<div class="card" id="card">
+  <div class="kyndra-logo">KYNDRA</div>
+  <div id="content">
+    <p class="loading">Lädt...</p>
+  </div>
+  <div class="tagline">be smart. be kind.</div>
+</div>
+
+<script>
+  // ================================================
+  // HIER TRAGT IHR EURE PARTNER EIN
+  // Für jeden neuen Partner einfach eine neue Zeile
+  // nach dem gleichen Muster hinzufügen.
+  // ================================================
+  const PARTNER_DATEN = {
+    "cafe-mueller": {
+      name: "Café Müller",
+      logo: "images/partners/cafe-mueller.png",
+      nachricht: "20% auf jeden Kaffee – zeig einfach diese Seite an der Theke."
+    },
+    "bar-glocke": {
+      name: "Bar Zur Glocke",
+      logo: "images/partners/bar-glocke.png",
+      nachricht: "Jeden Freitag Happy Hour von 18–20 Uhr."
+    }
+    // weiterer Partner z.B.:
+    // "neuer-partner-kuerzel": {
+    //   name: "Name des Partners",
+    //   logo: "images/partners/neuer-partner-kuerzel.png",
+    //   nachricht: "Werbetext des Partners"
+    // }
+  };
+
+  // Google Apps Script Web-App-URL hier eintragen
+  // (die URL, die ihr in Teil 2 aus Google Apps Script bekommen habt)
+  const TRACKING_URL = "HIER_EURE_APPS_SCRIPT_URL_EINTRAGEN";
+
+  // ================================================
+  // Ab hier muss nichts mehr verändert werden
+  // ================================================
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const partnerKey = urlParams.get("partner");
+  const ort = urlParams.get("ort") || "unbekannt";
+  const contentDiv = document.getElementById("content");
+
+  const partner = PARTNER_DATEN[partnerKey];
+
+  if (partner) {
+    contentDiv.innerHTML = `
+      <img class="partner-logo" src="${partner.logo}" alt="${partner.name} Logo">
+      <div class="partner-name">${partner.name}</div>
+      <div class="partner-message">${partner.nachricht}</div>
+    `;
+
+    // Scan im Hintergrund an Google Sheet melden
+    if (TRACKING_URL && TRACKING_URL.startsWith("http")) {
+      fetch(`${TRACKING_URL}?partner=${encodeURIComponent(partnerKey)}&ort=${encodeURIComponent(ort)}`)
+        .catch(() => { /* Fehler beim Tracking ignorieren wir bewusst, damit die Seite trotzdem funktioniert */ });
+    }
+  } else {
+    contentDiv.innerHTML = `
+      <div class="partner-message">Dieser QR-Code konnte nicht zugeordnet werden.</div>
+    `;
+  }
+</script>
+
+</body>
+</html>
