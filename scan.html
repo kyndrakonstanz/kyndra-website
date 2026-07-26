@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KYNDRA</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #000;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .partner-image {
+    max-width: 100%;
+    max-height: 100vh;
+    display: block;
+  }
+  .loading {
+    color: #999;
+    font-family: sans-serif;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<div id="content">
+  <p class="loading">Lädt...</p>
+</div>
+
+<script>
+  // ================================================
+  // HIER TRAGT IHR EURE PARTNER EIN
+  // Für jeden neuen Partner einfach eine neue Zeile
+  // nach dem gleichen Muster hinzufügen.
+  // Wichtig: "bild" zeigt jetzt auf das komplette
+  // Werbebild (nicht nur ein kleines Logo), das
+  // angezeigt werden soll.
+  // ================================================
+  const PARTNER_DATEN = {
+    "cafe-mueller": {
+      bild: "images/partners/cafe-mueller.png"
+    },
+    "bar-glocke": {
+      bild: "images/partners/bar-glocke.png"
+    }
+    // weiterer Partner z.B.:
+    // "neuer-partner-kuerzel": {
+    //   bild: "images/partners/neuer-partner-kuerzel.png"
+    // }
+  };
+
+  // Google Apps Script Web-App-URL hier eintragen
+  // WICHTIG: NUR die reine URL bis "/exec" - OHNE ?partner=... dranzuhängen!
+  const TRACKING_URL = "https://script.google.com/macros/s/AKfycbxhyEVIaD7feRZ9VY6PBsF9POqtQ4_MbJAaOAgIlWYrCJM04g8c18cF8WF-4qKphKW9/exec";
+
+  // ================================================
+  // Ab hier muss nichts mehr verändert werden
+  // ================================================
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const partnerKey = urlParams.get("partner");
+  const ort = urlParams.get("ort") || "unbekannt";
+  const contentDiv = document.getElementById("content");
+
+  const partner = PARTNER_DATEN[partnerKey];
+
+  if (partner) {
+    contentDiv.innerHTML = `<img class="partner-image" src="${partner.bild}" alt="Werbung">`;
+
+    // Scan im Hintergrund an Google Sheet melden
+    if (TRACKING_URL && TRACKING_URL.startsWith("http")) {
+      fetch(`${TRACKING_URL}?partner=${encodeURIComponent(partnerKey)}&ort=${encodeURIComponent(ort)}`)
+        .catch(() => { /* Fehler beim Tracking ignorieren wir bewusst, damit die Seite trotzdem funktioniert */ });
+    }
+  } else {
+    contentDiv.innerHTML = `<p class="loading">Dieser QR-Code konnte nicht zugeordnet werden.</p>`;
+  }
+</script>
+
+</body>
+</html>
