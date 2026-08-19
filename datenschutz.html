@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung | KYNDRA</title>
+
+    <!-- Google Fonts: Lora (Display) + Poppins (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary:      #ff477e;
+            --primary-dark: #e0305f;
+            --soft-rose:    #fff0f3;
+            --bg-light:     #fff5f7;
+            --dark:         #2d3436;
+            --muted:        #636e72;
+            --white:        #ffffff;
+            --gradient:     linear-gradient(135deg, #ff477e 0%, #ff85a1 100%);
+            --header-h:     72px;
+            --font-display: 'Lora', Georgia, serif;
+            --font-body:    'Poppins', 'Segoe UI', Arial, sans-serif;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.7;
+        }
+
+        /* HEADER — identisch zur Startseite */
+        header {
+            background: var(--white);
+            padding: 0 5%;
+            height: var(--header-h);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+        header a.back {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: color 0.2s, background 0.2s;
+        }
+        header a.back:hover { color: var(--primary); background: var(--soft-rose); }
+
+        /* CONTENT */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: calc(var(--header-h) + 60px) 6% 100px;
+        }
+        main h1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        .stand {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 48px;
+        }
+        main h2 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-top: 44px;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--soft-rose);
+        }
+        main h3 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+        main p, main li {
+            font-size: 0.95rem;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+        main ul { padding-left: 20px; margin-bottom: 16px; }
+        main a { color: var(--primary-dark); }
+        main strong { color: var(--dark); }
+        .box {
+            background: var(--soft-rose);
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin: 18px 0;
+            font-size: 0.9rem;
+        }
+
+        /* FOOTER — identisch zur Startseite */
+        footer {
+            background: var(--dark);
+            color: #b2bec3;
+            padding: 60px 8%;
+        }
+        .footer-inner { max-width: 780px; }
+        footer h3 {
+            font-family: var(--font-display);
+            color: var(--white);
+            font-size: 1.1rem;
+            border-bottom: 1px solid #444;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+        footer p { font-size: 0.85rem; line-height: 1.9; color: #b2bec3; }
+        footer strong { color: #dfe6e9; }
+        .footer-copy { margin-top: 40px; color: #636e72; font-size: 0.82rem; }
+        footer a { color: #dfe6e9; }
+
+        @media (max-width: 480px) {
+            main { padding: calc(var(--header-h) + 40px) 6% 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">KYNDRA</a>
+        <a href="index.html" class="back"><i class="fas fa-arrow-left"></i> Zurück zur Website</a>
+    </header>
+
+    <main>
+        <h1>Datenschutzerklärung</h1>
+        <p class="stand">Stand: August 2026</p>
+
+        <h2>1. Verantwortlicher</h2>
+        <p>
+            Verantwortlich für die Datenverarbeitung auf dieser Website ist:
+        </p>
+        <p>
+            KYNDRA GbR (in Gründung)<br>
+            Tim Sanwald, Moritz Salm<br>
+            Mainaustraße 74<br>
+            78464 Konstanz<br>
+            E-Mail: <a href="mailto:kyndra.kontakt@gmail.com">kyndra.kontakt@gmail.com</a>
+        </p>
+
+        <h2>2. Allgemeines zur Datenverarbeitung</h2>
+        <p>
+            Wir verarbeiten personenbezogene Daten der Nutzer dieser Website grundsätzlich nur, soweit dies zur
+            Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist.
+            Die Verarbeitung erfolgt regelmäßig nur mit Einwilligung des Nutzers (Art. 6 Abs. 1 lit. a DSGVO)
+            oder auf Grundlage unseres berechtigten Interesses (Art. 6 Abs. 1 lit. f DSGVO), etwa an der
+            technisch fehlerfreien Darstellung der Website und der Gewinnung von Werbepartnern für unser
+            soziales Projekt.
+        </p>
+        <p>
+            Ihre Daten werden gelöscht, sobald der Zweck der Verarbeitung entfällt, es sei denn, gesetzliche
+            Aufbewahrungspflichten stehen dem entgegen.
+        </p>
+
+        <h2>3. Hosting (GitHub Pages)</h2>
+        <p>
+            Diese Website wird über <strong>GitHub Pages</strong> gehostet, einen Dienst der GitHub, Inc.,
+            88 Colin P Kelly Jr St, San Francisco, CA 94107, USA (Teil von Microsoft Corporation). Beim Aufruf
+            unserer Website erhebt GitHub automatisch technische Zugriffsdaten (sog. Server-Logfiles), die Ihr
+            Browser übermittelt. Dazu können IP-Adresse, Datum und Uhrzeit des Zugriffs, Browsertyp und
+            referrierende URL gehören. Diese Verarbeitung erfolgt auf Grundlage unseres berechtigten Interesses
+            an einer sicheren und stabilen Bereitstellung der Website (Art. 6 Abs. 1 lit. f DSGVO).
+        </p>
+        <p>
+            Da GitHub, Inc. ein Unternehmen mit Sitz in den USA ist, kann es im Rahmen des Hostings zu einer
+            Übermittlung personenbezogener Daten in ein Drittland kommen. GitHub hat sich zur Absicherung
+            dieser Übermittlung zur Einhaltung der EU-Standardvertragsklauseln (SCCs) verpflichtet.
+            Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.
+        </p>
+
+        <h2>4. Kontaktformular (Formspree)</h2>
+        <p>
+            Wenn Sie uns über das Kontaktformular auf unserer Website eine Anfrage senden, werden die von
+            Ihnen im Formular angegebenen Daten verarbeitet:
+        </p>
+        <ul>
+            <li>Name</li>
+            <li>E-Mail-Adresse</li>
+            <li>Ihr Interesse (Werbepartner oder Standortpartner)</li>
+            <li>Ihre Nachricht (optional)</li>
+        </ul>
+        <p>
+            Die Übermittlung erfolgt technisch über den Dienst <strong>Formspree</strong> (Formspree, Inc.,
+            2261 Market Street #4972, San Francisco, CA 94114, USA), der die Formulardaten entgegennimmt und
+            per E-Mail an uns weiterleitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Bearbeitung Ihrer
+            Anfrage) bzw. lit. f DSGVO (unser Interesse an einer funktionierenden Kontaktmöglichkeit). Auch
+            hier kann es zu einer Übermittlung in die USA als Drittland kommen; Formspree verweist auf
+            geeignete Garantien zur Absicherung der Datenübermittlung. Weitere Informationen:
+            <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">Formspree Privacy Policy</a>.
+        </p>
+        <p>
+            Die Angabe der Daten ist freiwillig, jedoch für die Bearbeitung Ihrer Anfrage erforderlich. Ohne
+            diese Daten können wir Ihre Anfrage nicht bearbeiten.
+        </p>
+
+        <h2>5. QR-Code-Scan-Tracking für Werbepartner (Google Apps Script &amp; Google Sheets)</h2>
+        <p>
+            Ein zentraler Bestandteil unseres Angebots ist die Messung, wie oft die auf unseren Produktpackungen
+            aufgedruckten QR-Codes unserer Werbepartner gescannt werden. Scannt jemand einen dieser QR-Codes,
+            wird eine Landingpage aufgerufen, die das Partnerbild anzeigt. Beim Aufruf dieser Landingpage wird
+            automatisiert und im Hintergrund Folgendes erfasst und über <strong>Google Apps Script</strong> in
+            einer <strong>Google Sheets</strong>-Tabelle gespeichert:
+        </p>
+        <ul>
+            <li>Name des Werbepartners</li>
+            <li>Standort (Ort des jeweiligen QR-Codes)</li>
+            <li>Datum und Uhrzeit des Scans</li>
+        </ul>
+        <p>
+            <strong>IP-Adressen oder andere personenbezogene Gerätedaten werden dabei nicht gespeichert.</strong>
+            Es findet ausschließlich eine aggregierte, auf den jeweiligen Standort und Werbepartner bezogene
+            Zählung statt; ein Rückschluss auf einzelne Personen ist uns anhand dieser Daten nicht möglich.
+        </p>
+        <p>
+            Diese Verarbeitung dient dazu, unseren Werbepartnern nachvollziehbare Auswertungen über die
+            Sichtbarkeit ihrer Anzeige zu liefern, und erfolgt auf Grundlage unseres berechtigten Interesses
+            sowie des berechtigten Interesses unserer Werbepartner an einer transparenten Erfolgsmessung
+            (Art. 6 Abs. 1 lit. f DSGVO).
+        </p>
+        <p>
+            Die Verarbeitung erfolgt über Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland
+            (bzw. die Google LLC, USA, als Anbieterin der zugrunde liegenden Dienste). Es kann dabei zu einer
+            Übermittlung von Daten in die USA als Drittland kommen; Google hat sich zur Einhaltung der
+            EU-Standardvertragsklauseln verpflichtet. Weitere Informationen:
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Datenschutzerklärung</a>.
+        </p>
+
+        <h2>6. Cookies</h2>
+        <div class="box">
+            Diese Website setzt derzeit <strong>keine Cookies</strong> zu Analyse- oder Marketingzwecken ein.
+            Es werden ausschließlich technisch notwendige Vorgänge (siehe Abschnitt 5) ohne Speicherung von
+            Informationen auf Ihrem Endgerät durchgeführt. Sollten wir künftig Cookies oder vergleichbare
+            Technologien (z. B. Google Analytics) einsetzen, werden wir vorab Ihre Einwilligung gemäß § 25
+            TDDDG einholen und diese Datenschutzerklärung entsprechend aktualisieren.
+        </div>
+
+        <h2>7. Ihre Rechte als betroffene Person</h2>
+        <p>Ihnen stehen gegenüber uns hinsichtlich Ihrer personenbezogenen Daten folgende Rechte zu:</p>
+        <ul>
+            <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+            <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+            <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+            <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+            <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+            <li>Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+        </ul>
+        <p>
+            Zur Ausübung dieser Rechte wenden Sie sich bitte an
+            <a href="mailto:kyndra.kontakt@gmail.com">kyndra.kontakt@gmail.com</a>.
+        </p>
+
+        <h2>8. Beschwerderecht bei einer Aufsichtsbehörde</h2>
+        <p>
+            Sie haben unbeschadet anderweitiger Rechtsbehelfe das Recht auf Beschwerde bei einer
+            Datenschutz-Aufsichtsbehörde, insbesondere in dem Mitgliedstaat Ihres Aufenthaltsorts. Für uns
+            zuständig ist:
+        </p>
+        <p>
+            Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg (LfDI)<br>
+            Königstraße 10a, 70173 Stuttgart<br>
+            <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener">www.baden-wuerttemberg.datenschutz.de</a>
+        </p>
+
+        <h2>9. Änderung dieser Datenschutzerklärung</h2>
+        <p>
+            Wir passen diese Datenschutzerklärung an, sobald sich unsere Datenverarbeitung ändert, z. B. bei der
+            Einführung neuer Dienste oder Tracking-Tools. Es gilt jeweils die zum Zeitpunkt Ihres Besuchs
+            aktuelle, auf dieser Seite veröffentlichte Fassung.
+        </p>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <h3>Impressum</h3>
+            <p>
+                <strong>Angaben gemäß § 5 TMG:</strong><br>
+                KYNDRA GbR (in Gründung)<br>
+                Mainaustraße 74, 78464 Konstanz<br><br>
+                <strong>Vertreten durch:</strong> Tim Sanwald, Moritz Salm<br>
+                <strong>Kontakt:</strong> <a href="mailto:kyndra.kontakt@gmail.com">kyndra.kontakt@gmail.com</a><br><br>
+                <strong>Unternehmensstatus:</strong> Die KYNDRA GbR befindet sich derzeit in Gründung. Eine steuerliche Erfassung sowie Umsatzsteuer-ID liegen noch nicht vor.<br><br>
+                <strong>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</strong> Tim Sanwald, Moritz Salm
+            </p>
+        </div>
+        <p class="footer-copy">&copy; <span id="year"></span> KYNDRA – be kind. be smart.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
